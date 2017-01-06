@@ -16,4 +16,18 @@ public class InsertionSort {
         }
         return a;
     }
+
+    public static int[] insertionSort(int[] a, int from, int to)  {
+
+        for (int i = from + 1; i < to; ++i) {
+            int key = a[i];
+            int j = i - 1;
+            while (j >= from && a[j] > key) {
+                a[j + 1] = a[j];
+                j--;
+            }
+            a[j + 1] = key;
+        }
+        return a;
+    }
 }

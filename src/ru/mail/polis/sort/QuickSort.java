@@ -1,12 +1,16 @@
 package ru.mail.polis.sort;
 
+import java.util.Random;
+
 /**
  * Created by Игорь on 22.11.2016.
  */
 public class QuickSort {
+    private static final Random random = new Random();
+
     public static int[] quickSort(int[] a,int l,int r){
         if(l<r) {
-            int q = partition(a, l, r);
+            int q = randomPartition(a, l, r);
             quickSort(a, l, q);
             quickSort(a,q+1, r);
         }
@@ -16,6 +20,12 @@ public class QuickSort {
         int tmp = a[fir];
         a[fir]=a[sec];
         a[sec]=tmp;
+    }
+
+    public static int randomPartition(int arr[], int l, int r) {
+        int pivot = random.nextInt(r - l + 1);
+        swap(arr, l + pivot, r);
+        return partition(arr, l, r);
     }
 
     static int partition(int[]a, int l, int r){

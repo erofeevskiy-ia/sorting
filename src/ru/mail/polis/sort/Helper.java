@@ -24,4 +24,22 @@ public class Helper {
         }
         return a;
     }
+
+    public static int[] genSort(int n) {
+        int[] a = new int[n];
+        for (int i = 0; i < a.length; i++) {
+            a[i] = i;
+        }
+
+        return a;
+    }
+
+    public static int[] genSortBack(int n) {
+        int[] a = new int[n];
+        for (int i = 0; i < a.length; i++) {
+            a[i] = a.length-i;
+        }
+
+        return a;
+    }
 }

@@ -65,13 +65,40 @@ public class Tester {
     }
 
     @Test
+    public void test01_checkQuickSortThree() throws IOException {
+        Assert.assertTrue(isSorted(QuickSortThree.quickSortThree(array,0,array.length-1)));
+    }
+
+    @Test
     public void test01_checkMergeSort() throws IOException {
         Assert.assertTrue(isSorted(MergeSort.sort(array)));
+    }
+
+    @Test
+    public void test01_checkMergeSortConstMem() throws IOException {
+        Assert.assertTrue(isSorted(MergeSortConstMem.sort(array,0,array.length-1)));
     }
 
     @Test
     public void test01_checkInsertionSort() throws IOException {
         Assert.assertTrue(isSorted(InsertionSort.insertionSort(array)));
     }
+
+    @Test
+    public void test01_checkShellSort() throws IOException {
+        Assert.assertTrue(isSorted(ShellSort.shellSort(array)));
+    }
+
+    @Test
+    public void test01_checkInsertionModSort() throws IOException {
+        Assert.assertTrue(isSorted(InsertionSortMod.insertionSortMod(array)));
+    }
+
+    @Test
+    public void test01_checkSelectionSort() throws IOException {
+        Assert.assertTrue(isSorted(SelectionSort.selectionSort(array)));
+    }
+
+
 
 }
